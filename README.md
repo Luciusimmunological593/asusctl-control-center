@@ -1,0 +1,179 @@
+# ASUS Linux Control Center
+
+ASUS Linux Control Center is a desktop GUI for the Linux ASUS stack.
+
+It sits on top of `asusctl` with optional `supergfxctl` integration, detects what is actually available on the current machine, and only shows controls that the backend can support honestly.
+
+It is designed for public release and general users, not for one specific laptop model or a single-device workflow. When the required ASUS Linux pieces are missing or incomplete, the app reports that clearly and exposes diagnostics instead of pretending every system supports the same controls.
+
+## What this app is
+
+- a PyQt desktop frontend for `asusctl`
+- an optional frontend for `supergfxctl` graphics mode switching
+- a capability-aware UI that only exposes supported controls
+- a diagnostics tool that helps users file actionable bug reports
+
+## Project position
+
+This project does not replace `asusd`, `asusctl`, or `supergfxctl`.
+
+It differentiates itself by focusing on:
+
+- explicit capability detection
+- clear unsupported states instead of fake controls
+- a standalone contributor-friendly Python/Qt codebase
+- Ubuntu and cross-distro guidance for users who are not already inside the asus-linux package ecosystem
+- diagnostics that make issue reports actionable
+
+The backend remains the upstream Linux ASUS stack:
+
+- `asusctl` and `asusd` for performance profiles, fan curves, battery limits, keyboard brightness, and Aura lighting
+- `supergfxctl` and `supergfxd` only when graphics mode switching is actually needed
+- read-only low-level ASUS kernel attributes for troubleshooting
+
+## Current scope
+
+Implemented in this rebuild:
+
+- device and service overview
+- ASUS profile detection and switching
+- fan curve detection and editing on supported devices
+- keyboard brightness control
+- Aura effect presets and Aura power zone actions
+- battery charge limit and one-shot charge actions
+- optional `supergfxctl` graphics mode switching
+- diagnostics report export/copy
+- settings persistence for window state, editor state, and lighting selections
+
+Intentionally not shipped in v0.1.0:
+
+- AniMe Matrix editing UI
+- Slash / SCSI LED UI
+- direct low-level firmware attribute writes
+- packaging for every distro
+
+Those areas are highly model-specific and need more hardware validation before they can be exposed responsibly.
+
+## Support model
+
+The app does not claim universal ASUS support.
+
+- Most functionality depends on `asusctl`, `asusd`, kernel support, and model-specific firmware exposure.
+- Fan curves are only shown when the current device actually exposes them.
+- Aura controls are only shown when the backend reports usable Aura commands.
+- Graphics mode switching is optional and only available when `supergfxctl` is installed.
+- A working `supergfxctl` setup also requires `supergfxd`, its systemd unit, and the system D-Bus policy. A user-local binary alone is not enough.
+- Low-level ASUS firmware attributes are shown read-only for troubleshooting when the kernel exposes them.
+
+See [docs/SUPPORT.md](docs/SUPPORT.md) for the detailed support boundaries and research basis.
+
+## Install and run
+
+### Requirements
+
+- Linux with systemd
+- Python 3.11 or newer
+- `asusctl` and `asusd` for ASUS hardware control
+- optional: `supergfxctl` and `supergfxd` for graphics mode switching
+
+### Step 1. Install the ASUS backend
+
+The upstream ASUS Linux project still describes Debian and Ubuntu families as not officially supported. That does not mean the stack never works there; it means support quality depends heavily on kernel age, packaging, and machine model.
+
+Install the backend in this order:
+
+1. Install or build `asusctl` and `asusd` first.
+2. Only install `supergfxctl` if you actually need graphics mode switching.
+
+If you do install `supergfxctl`, treat it as a system integration rather than a standalone CLI drop-in. A usable setup depends on `supergfxd`, the system service, and the system D-Bus policy being installed correctly.
+
+### Step 2. Verify the backend
+
+Run:
+
+```bash
+asusctl info
+systemctl is-active asusd.service
+```
+
+Expected result:
+
+- `asusctl info` should print device information instead of failing.
+- `systemctl is-active asusd.service` should return `active`.
+
+If you installed `supergfxctl`, also make sure `supergfxd` is installed and running as a system service.
+
+### Step 3. Install the app
+
+Standard install:
+
+```bash
+python3 -m pip install .
+```
+
+User-local install with desktop entry and icon:
+
+```bash
+./scripts/install-user.sh
+```
+
+### Step 4. Run the app
+
+```bash
+asus-linux-control-center
+```
+
+### Step 5. Collect diagnostics when needed
+
+If the UI opens but some controls are disabled, collect diagnostics before filing a bug.
+
+Text report:
+
+```bash
+asus-linux-control-center --diagnostics
+```
+
+JSON report:
+
+```bash
+asus-linux-control-center --diagnostics-json
+```
+
+See [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md) for common setup problems.
+
+## Development
+
+Create a virtualenv that can reuse the system PyQt6 installation if present:
+
+```bash
+python3 -m venv --system-site-packages .venv
+.venv/bin/python -m pip install -U pip
+.venv/bin/python -m pip install -e .[dev]
+```
+
+If `python3 -m venv` fails because `ensurepip` is unavailable, install your distro's `python3-venv` package or bootstrap `pip` into the venv manually before running the remaining commands.
+
+Useful commands:
+
+```bash
+make test
+make lint
+make diagnostics
+make build
+```
+
+## Documentation
+
+- [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
+- [docs/PUBLISHING.md](docs/PUBLISHING.md)
+- [docs/SUPPORT.md](docs/SUPPORT.md)
+- [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md)
+- [docs/VALIDATION.md](docs/VALIDATION.md)
+
+## License
+
+GPL-3.0-or-later. See [LICENSE](LICENSE).
+
+## Trademark notice
+
+ASUS and ROG are trademarks of ASUSTeK Computer Inc. This project is an independent open-source utility and is not affiliated with or endorsed by ASUS.

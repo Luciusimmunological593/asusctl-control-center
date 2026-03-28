@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "asus-linux-control-center"
+version = "0.1.0"
+description = "Capability-aware ASUS Linux control center for asusctl and optional supergfxctl"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "GPL-3.0-or-later"
+authors = [
+  { name = "Open source contributors" },
+]
+dependencies = [
+  "PyQt6>=6.6",
+]
+keywords = ["asus", "linux", "asusctl", "supergfxctl", "qt", "hardware-control"]
+urls = { Homepage = "https://github.com/OsamaAlhasanat/asusctl-control-center", Repository = "https://github.com/OsamaAlhasanat/asusctl-control-center", Issues = "https://github.com/OsamaAlhasanat/asusctl-control-center/issues" }
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: X11 Applications :: Qt",
+  "Environment :: Wayland",
+  "Intended Audience :: End Users/Desktop",
+  "Operating System :: POSIX :: Linux",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: System :: Hardware",
+  "Topic :: System :: Systems Administration",
+]
+
+[project.optional-dependencies]
+dev = [
+  "build>=1.2",
+  "pytest>=8.3",
+  "ruff>=0.11",
+]
+
+[project.scripts]
+asus-linux-control-center = "asus_linux_control_center.__main__:main"
+
+[tool.setuptools.package-dir]
+"" = "src"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

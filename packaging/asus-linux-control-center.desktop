@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=ASUS Linux Control Center
+Comment=Capability-aware ASUS Linux control center
+Exec=asus-linux-control-center
+Icon=asus-linux-control-center
+Terminal=false
+Categories=Settings;System;Utility;
+Keywords=ASUS;ROG;Linux;asusctl;hardware;
+StartupNotify=true
