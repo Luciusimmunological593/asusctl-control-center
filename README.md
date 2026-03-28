@@ -122,6 +122,21 @@ It is designed for users and integrators who want a Node-facing launcher without
 - exposes `doctor`, `diagnostics`, `install-core`, and `run` commands
 - keeps hardware logic and diagnostics inside the Python core
 
+Current status:
+
+- the wrapper source is in this repository
+- it is not yet published to the public npm registry
+
+If you want to use it directly from a local checkout today:
+
+```bash
+npm install -g ./npm-wrapper
+asusctl-control-center doctor
+asusctl-control-center
+```
+
+That wrapper still expects the same Linux backend requirements as the Python app itself: `asusctl`, `asusd`, and optionally `supergfxctl` plus `supergfxd`.
+
 See [docs/NPM_WRAPPER.md](docs/NPM_WRAPPER.md) for the architecture and release-coupling details.
 
 ## Support model

@@ -8,6 +8,30 @@ It does not reimplement hardware logic in JavaScript. Instead, it:
 - can bootstrap a managed Python virtual environment as a fallback
 - exposes `doctor`, `diagnostics`, `install-core`, and launch commands from Node
 
+## Install status
+
+The wrapper source is in this repository, but the package is not yet published to the public npm registry.
+
+To use it from a local checkout:
+
+```bash
+npm install -g ./npm-wrapper
+```
+
+Then verify the machine before launch:
+
+```bash
+asusctl-control-center doctor
+asusctl-control-center
+```
+
+The wrapper still depends on the same Linux ASUS backend stack as the Python app:
+
+- `asusctl`
+- `asusd`
+- optional `supergfxctl`
+- optional `supergfxd`
+
 ## Commands
 
 ```bash

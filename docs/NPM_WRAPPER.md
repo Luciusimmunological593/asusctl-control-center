@@ -4,6 +4,18 @@ The repository now includes a thin npm wrapper in [`npm-wrapper/`](../npm-wrappe
 
 The wrapper does not replace the Python/PyQt application. The Python app remains the product and the hardware-control implementation. The Node layer only handles bootstrap, dependency checks, and process launch.
 
+## Current publish status
+
+The wrapper source is part of this repository, but it is not yet published to the public npm registry.
+
+For now, the supported install path is from a local checkout:
+
+```bash
+npm install -g ./npm-wrapper
+asusctl-control-center doctor
+asusctl-control-center
+```
+
 ## Design goals
 
 - keep Python as the source of truth for device probing and diagnostics
