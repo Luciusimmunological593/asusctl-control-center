@@ -1,10 +1,40 @@
 # ASUS Linux Control Center
 
+[![Release](https://img.shields.io/github/v/release/OsamaAlhasanat/asusctl-control-center)](https://github.com/OsamaAlhasanat/asusctl-control-center/releases)
+[![CI](https://github.com/OsamaAlhasanat/asusctl-control-center/actions/workflows/ci.yml/badge.svg)](https://github.com/OsamaAlhasanat/asusctl-control-center/actions/workflows/ci.yml)
+[![License](https://img.shields.io/github/license/OsamaAlhasanat/asusctl-control-center)](LICENSE)
+[![Python](https://img.shields.io/badge/python-3.11%2B-blue)](pyproject.toml)
+
 ASUS Linux Control Center is a desktop GUI for the Linux ASUS stack.
 
 It sits on top of `asusctl` with optional `supergfxctl` integration, detects what is actually available on the current machine, and only shows controls that the backend can support honestly.
 
 It is designed for public release and general users, not for one specific laptop model or a single-device workflow. When the required ASUS Linux pieces are missing or incomplete, the app reports that clearly and exposes diagnostics instead of pretending every system supports the same controls.
+
+## Why this exists
+
+The ASUS Linux ecosystem already has the real backend tools. What many users still need is a clean desktop frontend that:
+
+- exposes the supported controls without making false promises
+- makes `asusctl` and optional `supergfxctl` easier to use day to day
+- helps users on Ubuntu and other non-Arch setups understand what is missing
+- generates diagnostics that are actually useful when something does not work
+
+## Highlights
+
+- capability-aware dashboard for device, service, and backend status
+- performance profile switching with fan curve editing on supported hardware
+- keyboard, Aura, battery, and graphics controls in one desktop UI
+- built-in diagnostics export for bug reports and setup troubleshooting
+- public release artifacts, automated tests, and validation notes in-repo
+
+## What users see in the app
+
+- `Home`: device identity, active services, supported capabilities, and warnings
+- `Performance`: ASUS profile switching plus fan curve editing where the backend supports it
+- `Hardware`: keyboard brightness, Aura controls, battery limits, and optional graphics mode actions
+- `Diagnostics`: copyable and exportable system reports for troubleshooting
+- `Settings`: runtime paths, theme selection, and project support links
 
 ## What this app is
 
@@ -53,6 +83,13 @@ Intentionally not shipped in v0.1.0:
 - packaging for every distro
 
 Those areas are highly model-specific and need more hardware validation before they can be exposed responsibly.
+
+## Project status
+
+- Public `v0.1.0` release is available in [GitHub Releases](https://github.com/OsamaAlhasanat/asusctl-control-center/releases)
+- Source distributions and wheel artifacts are published for the release
+- Automated tests, linting, and build steps are part of the repository workflow
+- Hardware validation notes and current support boundaries are documented openly
 
 ## Support model
 
