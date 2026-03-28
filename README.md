@@ -28,6 +28,26 @@ The ASUS Linux ecosystem already has the real backend tools. What many users sti
 - built-in diagnostics export for bug reports and setup troubleshooting
 - public release artifacts, automated tests, and validation notes in-repo
 
+## Screenshots
+
+### Home
+
+![Home dashboard](docs/screenshots/home.png)
+
+Device identity, backend services, supported capabilities, active profile, and setup warnings are visible in one place.
+
+### Performance
+
+![Performance page](docs/screenshots/performance.png)
+
+ASUS profile switching and fan curve editing stay together so supported laptops can tune performance without dropping to the CLI.
+
+### Hardware
+
+![Hardware page](docs/screenshots/hardware.png)
+
+Keyboard brightness, Aura lighting, battery limits, one-shot charging, and optional graphics controls are grouped into one hardware page.
+
 ## What users see in the app
 
 - `Home`: device identity, active services, supported capabilities, and warnings
