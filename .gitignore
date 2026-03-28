@@ -10,3 +10,4 @@ dist/
 *.egg-info/
 *.log
 task_complete
+npm-wrapper/node_modules/

@@ -7,6 +7,7 @@
 - `asusctl` CLI as the primary backend
 - optional `supergfxctl` CLI backend
 - read-only sysfs inspection for low-level ASUS firmware attributes
+- optional Node/npm wrapper for launch and diagnostics orchestration
 
 ## Module layout
 
@@ -52,6 +53,8 @@
   Custom fan curve editor widget.
 - `src/asus_linux_control_center/ui/styles.py`
   Application stylesheet (dark sidebar, light cards, blue accents).
+- `npm-wrapper/`
+  Thin Node wrapper that detects a system install, bootstraps a managed virtualenv fallback, and delegates diagnostics/launch to the Python core.
 
 ## State flow
 

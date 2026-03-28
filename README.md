@@ -111,6 +111,19 @@ Those areas are highly model-specific and need more hardware validation before t
 - Automated tests, linting, and build steps are part of the repository workflow
 - Hardware validation notes and current support boundaries are documented openly
 
+## Optional npm wrapper
+
+The repository now includes a thin npm wrapper in [`npm-wrapper/`](npm-wrapper).
+
+It is designed for users and integrators who want a Node-facing launcher without rewriting the app in JavaScript:
+
+- prefers a system `asus-linux-control-center` if one already exists
+- can bootstrap a managed Python virtualenv fallback
+- exposes `doctor`, `diagnostics`, `install-core`, and `run` commands
+- keeps hardware logic and diagnostics inside the Python core
+
+See [docs/NPM_WRAPPER.md](docs/NPM_WRAPPER.md) for the architecture and release-coupling details.
+
 ## Support model
 
 The app does not claim universal ASUS support.
@@ -222,6 +235,7 @@ make build
 ## Documentation
 
 - [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
+- [docs/NPM_WRAPPER.md](docs/NPM_WRAPPER.md)
 - [docs/PUBLISHING.md](docs/PUBLISHING.md)
 - [docs/SUPPORT.md](docs/SUPPORT.md)
 - [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md)

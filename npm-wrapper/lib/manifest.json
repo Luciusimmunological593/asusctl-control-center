@@ -1,0 +1,8 @@
+{
+  "wrapperVersion": "0.1.0",
+  "coreVersion": "0.1.0",
+  "releaseTag": "v0.1.0",
+  "wheelFile": "asus_linux_control_center-0.1.0-py3-none-any.whl",
+  "wheelSha256": "2817d890166402a0e23d010bdf72a0687b290f7139b85c73f96b0576eaf51ab2",
+  "wheelUrl": "https://github.com/OsamaAlhasanat/asusctl-control-center/releases/download/v0.1.0/asus_linux_control_center-0.1.0-py3-none-any.whl"
+}
