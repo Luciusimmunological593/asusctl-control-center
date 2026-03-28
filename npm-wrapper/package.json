@@ -2,7 +2,17 @@
   "name": "asusctl-control-center",
   "version": "0.1.0",
   "description": "Thin npm wrapper for the ASUS Linux Control Center Python/PyQt app",
+  "author": "Osama Alhasanat",
   "license": "GPL-3.0-or-later",
+  "homepage": "https://github.com/OsamaAlhasanat/asusctl-control-center/tree/main/npm-wrapper#readme",
+  "bugs": {
+    "url": "https://github.com/OsamaAlhasanat/asusctl-control-center/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OsamaAlhasanat/asusctl-control-center.git",
+    "directory": "npm-wrapper"
+  },
   "main": "index.js",
   "exports": {
     ".": "./index.js"
@@ -25,8 +35,13 @@
   "keywords": [
     "asus",
     "asusctl",
+    "fan-control",
+    "hardware-control",
     "linux",
     "pyqt",
+    "pyqt6",
+    "rog",
+    "supergfxctl",
     "wrapper"
   ]
 }
