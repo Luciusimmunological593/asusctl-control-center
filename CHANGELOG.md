@@ -3,7 +3,8 @@
 ## Unreleased
 
 - Added the repository-only npm wrapper in `npm-wrapper/` with system-install detection, managed-venv fallback, CLI commands, and a small JS API.
-- Clarified that the npm wrapper is not yet published to the public npm registry and is currently installed from a local checkout.
+- Published the npm wrapper on the public npm registry as `asusctl-control-center`.
+- Updated the npm wrapper docs to use the public npm install path and keep the local checkout flow for development.
 - Polished npm package metadata for the future registry page.
 
 ## 0.1.0 - 2026-03-28

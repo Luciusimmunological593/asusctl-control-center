@@ -6,14 +6,20 @@ The wrapper does not replace the Python/PyQt application. The Python app remains
 
 ## Current publish status
 
-The wrapper source is part of this repository, but it is not yet published to the public npm registry.
+The wrapper source is part of this repository and is also published on npm as `asusctl-control-center`.
 
-For now, the supported install path is from a local checkout:
+The normal install path is:
+
+```bash
+npm install -g asusctl-control-center
+asusctl-control-center doctor
+asusctl-control-center
+```
+
+For local development from a checkout:
 
 ```bash
 npm install -g ./npm-wrapper
-asusctl-control-center doctor
-asusctl-control-center
 ```
 
 ## Design goals
@@ -87,6 +93,8 @@ When a core executable is available, the wrapper calls `asus-linux-control-cente
 
 ## Release coupling
 
-The wrapper version matches the Python core version.
+The wrapper records both its own npm package version and the pinned Python core version.
 
-For `v0.1.0`, the managed installer is pinned to the exact GitHub release wheel plus SHA256 checksum verification. That gives the wrapper a deterministic bootstrap path without moving the Python implementation into Node.
+Patch wrapper releases may update packaging, metadata, or docs while keeping the same pinned Python core.
+
+For the current line, the managed installer is pinned to the exact `v0.1.0` GitHub release wheel plus SHA256 checksum verification. That gives the wrapper a deterministic bootstrap path without moving the Python implementation into Node.

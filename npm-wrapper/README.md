@@ -10,9 +10,15 @@ It does not reimplement hardware logic in JavaScript. Instead, it:
 
 ## Install status
 
-The wrapper source is in this repository, but the package is not yet published to the public npm registry.
+The package is published on npm as `asusctl-control-center`.
 
-To use it from a local checkout:
+Install it normally with:
+
+```bash
+npm install -g asusctl-control-center
+```
+
+For local development from a checkout:
 
 ```bash
 npm install -g ./npm-wrapper

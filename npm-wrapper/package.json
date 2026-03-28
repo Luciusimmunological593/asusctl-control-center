@@ -1,6 +1,6 @@
 {
   "name": "asusctl-control-center",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Thin npm wrapper for the ASUS Linux Control Center Python/PyQt app",
   "author": "Osama Alhasanat",
   "license": "GPL-3.0-or-later",

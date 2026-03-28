@@ -124,15 +124,21 @@ It is designed for users and integrators who want a Node-facing launcher without
 
 Current status:
 
-- the wrapper source is in this repository
-- it is not yet published to the public npm registry
+- the wrapper source is in this repository under `npm-wrapper/`
+- the wrapper is published on npm as `asusctl-control-center`
 
-If you want to use it directly from a local checkout today:
+Install it from npm:
+
+```bash
+npm install -g asusctl-control-center
+asusctl-control-center doctor
+asusctl-control-center
+```
+
+For local development from a checkout:
 
 ```bash
 npm install -g ./npm-wrapper
-asusctl-control-center doctor
-asusctl-control-center
 ```
 
 That wrapper still expects the same Linux backend requirements as the Python app itself: `asusctl`, `asusd`, and optionally `supergfxctl` plus `supergfxd`.
